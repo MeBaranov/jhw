@@ -1,13 +1,13 @@
 package google.hello.world;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RESTController;
+import org.springframework.web.bind.annotation.RestController;
 
-@RESTController
+@RestController
 public class HelloWorldController {
     
-    @GetMapping(“/hello-world”)
+    @GetMapping("/hello-world")
     public String HelloWorld(){
-        return “Hello World”;
+        return "Hello World";
     }
 }
