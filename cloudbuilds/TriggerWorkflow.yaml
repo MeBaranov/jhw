@@ -1,7 +1,10 @@
 steps:
-  - name: gcr.io/cloud-builders/gcloud
-    entrypoint: bash
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     args:
-      - "-c"
-      - |
-        gcloud workflows execute ci_example --project=$_WF_PROJECT --location=$_WF_LOCATION --data={\"sha\":\"$COMMIT_SHA\",\ \"location\":\"$LOCATION\"}
+    - gcloud
+    - workflows
+    - execute
+    - ci_example
+    - --location="$_WF_LOCATION"
+    - --project="$_WF_PROJECT"
+    - --data="{\"sha\":\"$COMMIT_SHA\", \"location\":\"$LOCATION\"}"
