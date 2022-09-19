@@ -1,0 +1,7 @@
+steps:
+  - name: gcr.io/cloud-builders/gcloud
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        gcloud workflows execute ci_example --location=$WF_LOCATION --data={\"sha\":\"$COMMIT_SHA\", \"location\":\"$LOCATION"}
