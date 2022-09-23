@@ -4,4 +4,4 @@ steps:
     args:
       - "-c"
       - |
-        gcloud workflows execute ci-example --project=$_WF_PROJECT --location=$_WF_LOCATION --data="{\"sha\":\"$COMMIT_SHA\", \"location\":\"$_LOCATION\", \"project\":\"$_PROJECT\"}"
+        gcloud workflows execute ci-example --project=$_WF_PROJECT --location=$_WF_LOCATION --data="{\"sha\":\"$COMMIT_SHA\", \"location\":\"$_LOCATION\", \"project\":\"$_PROJECT\", \"repo\":\"$_REPO\"}"
