@@ -8,6 +8,6 @@ public class HelloWorldControllerUnitTests {
     @Test
     public void testHelloWorld() {
         HelloWorldController hwc = new HelloWorldController();
-        assertEquals("hello world", hwc.HelloWorld());
+        assertEquals("Hello World", hwc.HelloWorld());
     }
 }
