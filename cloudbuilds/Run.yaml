@@ -4,4 +4,4 @@ steps:
     args:
       - "-c"
       - |
-        gcloud run deploy jhwtest --project=$_PROJECT --region=$_LOCATION --image="${_LOCATION}-docker.pkg.dev/${_PROJECT}/${_REPO}/${COMMIT_SHA}"
+        gcloud run deploy jhwtest --project=$_PROJECT --region=$_LOCATION --image="${_LOCATION}-docker.pkg.dev/${_PROJECT}/${_REPO}/jhw@sha:${COMMIT_SHA}"
