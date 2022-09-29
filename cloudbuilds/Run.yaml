@@ -1,0 +1,7 @@
+steps:
+  - name: gcr.io/cloud-builders/gcloud
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        gcloud run deploy jhwtest --project=$_PROJECT --region=$_LOCATION --image="${_LOCATION}-docker.pkg.dev/${_PROJECT}/${_REPO}/${COMMIT_SHA}"
