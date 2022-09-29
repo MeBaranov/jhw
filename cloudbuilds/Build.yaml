@@ -1,5 +1,5 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', '$_LOCATION-docker.pkg.dev/$_PROJECT/$_REPO/jhw:latest', '.' ]
+  args: [ 'build', '-t', '$_LOCATION-docker.pkg.dev/$_PROJECT/$_REPO/jhw:$COMMIT_SHA', '.' ]
 images:
-- '$_LOCATION-docker.pkg.dev/$_PROJECT/$_REPO/jhw:latest'
+- '$_LOCATION-docker.pkg.dev/$_PROJECT/$_REPO/jhw:$COMMIT_SHA'
