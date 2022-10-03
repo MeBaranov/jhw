@@ -4,6 +4,6 @@ steps:
     args:
       - "-c"
       - |
-        token=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" --header "Metadata-Flavor: Google");\
+        token=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" --header "Metadata-Flavor: Google" |  | jq -r '.access_token');\
         res=$(curl -H "Authorization: Bearer $token" $_URI/hello-world);\
         if (echo $res | grep "Hello World"); then echo success; else echo ERROR: unexpected curl result. Token: $token, res: $res; exit 1; fi
