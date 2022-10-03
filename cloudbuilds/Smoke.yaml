@@ -1,7 +1,7 @@
 steps:
-  - name: gcr.io/cloud-builders/gcloud
+  - name: gcr.io/${_PROJECT}/curl
     entrypoint: bash
     args:
       - "-c"
       - |
-        if (curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" https://jhwtest-nfebyz4gja-uc.a.run.app/hello-world | grep hw); then echo success; else echo ERROR: unexpected curl result; exit 1; fi
+        if (curl https://jhwtest-nfebyz4gja-uc.a.run.app/hello-world | grep hw); then echo success; else echo ERROR: unexpected curl result; exit 1; fi
