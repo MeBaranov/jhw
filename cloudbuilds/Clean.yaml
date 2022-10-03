@@ -4,4 +4,4 @@ steps:
     args:
       - "-c"
       - |
-        gcloud run services delete jhwtest --project=$_PROJECT --region=$_LOCATION --quiet
+        gcloud run services delete $_SERVICE --project=$_PROJECT --region=$_LOCATION --quiet

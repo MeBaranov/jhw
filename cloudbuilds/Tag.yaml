@@ -1,0 +1,7 @@
+steps:
+  - name: gcr.io/cloud-builders/gcloud
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        gcloud artifacts docker tags add ${_LOCATION}-docker.pkg.dev/${_PROJECT}/${_REPO}/jhw:${COMMIT_SHA} ${_LOCATION}-docker.pkg.dev/${_PROJECT}/${_REPO}/jhw:release_candidate
