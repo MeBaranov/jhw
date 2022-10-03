@@ -4,4 +4,4 @@ steps:
     args:
       - "-c"
       - |
-        gcloud run deploy $_SERVICE --project=$_PROJECT --region=$_LOCATION --image="${_LOCATION}-docker.pkg.dev/${_PROJECT}/${_REPO}/jhw:${COMMIT_SHA}"
+        gcloud run deploy $_SERVICE --project=$_PROJECT --region=$_LOCATION --image="${_LOCATION}-docker.pkg.dev/${_PROJECT}/${_REPO}/jhw:${COMMIT_SHA}" --allow-unauthenticated
