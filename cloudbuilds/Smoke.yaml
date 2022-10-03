@@ -4,4 +4,4 @@ steps:
     args:
       - "-c"
       - |
-        res=$(curl https://jhwtest-nfebyz4gja-uc.a.run.app/hello-world); if (echo $res | grep "Hello World"); then echo success; else echo ERROR: unexpected curl result: $res; exit 1; fi
+        res=$(curl $_URI/hello-world); if (echo $res | grep "Hello World"); then echo success; else echo ERROR: unexpected curl result: $res; exit 1; fi
