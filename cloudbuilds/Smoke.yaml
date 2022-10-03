@@ -10,5 +10,5 @@ steps:
         token=$(echo $tokres | jq -r '.access_token');\
         echo Short token: $token;\
         echo Uri: $_URI;\
-        res=$(curl -H "Authorization: Bearer $token" https://jhwtest-511f4d7e9dfb41d9550b1f733e33c5210e25b449-nfebyz4gja-uc.a.run.app/hello-world);\
+        res=$(curl -H "Authorization: Bearer $token" $_URI/hello-world);\
         if (echo $res | grep "Hello World"); then echo success; else echo ERROR: unexpected curl result. Token: $token, res: $res; exit 1; fi
