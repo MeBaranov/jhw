@@ -1,9 +1,10 @@
 steps:
-  - name: gcr.io/cloud-builders/gcloud
+  - name: gcr.io/cloud-builders/curl
     entrypoint: bash
     args:
       - "-c"
       - |
+        apt update && apt install jq -y;\
         tokres=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" --header "Metadata-Flavor: Google");\
         echo Full token: $tokres;\
         token=$(echo $tokres | jq -r '.access_token');\
